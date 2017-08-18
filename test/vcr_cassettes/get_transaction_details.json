@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v7/Transaction/info/json?serviceID=SL-8299-1400&token=c352090ba5e3f649f65c37bb16fedea210a310d9&transactionId=859462273Xbc39dc"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"connection\":{\"trust\":\"10\",\"country\":\"Unknown\",\"city\":\"\",\"locationLat\":\"\",\"locationLon\":\"\",\"browserData\":\"\",\"ipAddress\":\"127.0.0.1\",\"countryName\":\"Unknown\",\"blacklist\":\"0\",\"host\":\"localhost\",\"orderIpAddress\":\"127.0.0.1\",\"orderReturnURL\":\"http:\\/\\/www.avgscan.mobi\\/en\\/products\\/avg\\/order\\/finished\",\"merchantCode\":\"M-6094-5250\",\"merchantName\":\"Govannon\"},\"enduser\":{\"language\":\"en\",\"accessCode\":\"\",\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"dob\":\"\",\"phoneNumber\":\"\",\"emailAddress\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"sendConfirmMail\":\"\",\"confirmMailTemplate\":\"\",\"customerReference\":\"\",\"customerTrust\":\"\",\"address\":{\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"countryCode\":\"NL\"},\"invoiceAddress\":{\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"countryCode\":\"NL\"},\"company\":{\"name\":\"\",\"cocNumber\":\"\",\"vatNumber\":\"\",\"countryCode\":\"NL\"}},\"saleData\":{\"invoiceDate\":\"\",\"deliveryDate\":\"\",\"orderData\":\"\"},\"paymentDetails\":{\"amount\":\"1000\",\"currenyAmount\":\"1000\",\"paidAmount\":\"0\",\"paidCurrenyAmount\":\"0\",\"paidBase\":\"0\",\"paidCosts\":\"0\",\"paidCostsVat\":\"0\",\"paidCurrency\":\"EUR\",\"paidAttemps\":\"1\",\"paidDuration\":\"0\",\"description\":\"Pay.nl 8594 6227 3073 5613\",\"processTime\":\"14937\",\"state\":\"-80\",\"stateName\":\"CANCEL\",\"stateDescription\":\"Expired\",\"exchange\":\"\",\"storno\":\"0\",\"paymentOptionId\":\"10\",\"paymentOptionSubId\":\"0\",\"secure\":\"0\",\"secureStatus\":\"\",\"identifierName\":\"\",\"identifierPublic\":\"\",\"identifierHash\":\"\",\"cardExpire\":\"\",\"customerKey\":\"\",\"serviceId\":\"SL-8299-1400\",\"serviceName\":\"govannon.nl\",\"serviceDescription\":\"Onderzoeken van de bruikbaarheid van pay.nl in de diensten die wij leveren aan onze klanten. De eerste integratie zal plaatsvinden op een sandbox project om de api en functionaliteit te testen alvorens we een echt product er aan hangen. \",\"created\":\"2017-07-25 09:38:33\",\"modified\":\"2017-07-25 13:47:30\",\"paymentMethodId\":\"4\",\"paymentMethodName\":\"Transacties \",\"paymentMethodDescription\":\"Pay Per Transaction\",\"paymentProfileName\":\"iDEAL\",\"cardBrand\":\"\",\"cardType\":\"\",\"cardCountryCode\":\"\"},\"statsDetails\":{\"tool\":\"\",\"info\":\"\",\"object\":\"\",\"extra1\":\"\",\"extra2\":\"\",\"extra3\":\"\",\"promotorId\":\"0\",\"transferData\":\"\",\"paymentSessionId\":\"859462273\"},\"stornoDetails\":{\"stornoId\":\"\",\"stornoAmount\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"city\":\"\",\"datetime\":\"\",\"reason\":\"\",\"emailAddress\":\"\"}}",
+      "headers": {
+        "Date": "Fri, 18 Aug 2017 14:08:37 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=3a9e1f373a22e6cf226c0480374e342bb34a92d2; expires=Sat, 18-Aug-2018 14:08:37 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Fri, 18 Aug 2017 14:08:37 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "2471",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

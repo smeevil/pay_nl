@@ -16,7 +16,7 @@ defmodule PayNL.Client do
   @doc """
   Will request all available payment options at pay.nl that are accociated with the account
   """
-  @spec get_payment_options({:ok, options :: %PayNL.Options{}} | {:error, any}) :: {:ok, map} | {:error, any()}
+  @spec get_payment_options({:ok, %PayNL.Options{}} | %PayNL.Options{} | {:error, any}) :: {:ok, map} | {:error, any()}
   def get_payment_options({:ok, %PayNL.Options{} = options}), do: get_payment_options(options)
   def get_payment_options({:error, _} = error), do: error
   def get_payment_options(%PayNL.Options{} = options) do
@@ -48,6 +48,17 @@ defmodule PayNL.Client do
     |> new
     |> put_req_body(PayNL.Options.to_post_map(options))
     |> post
+    |> process_response
+  end
+
+  @doc"""
+  Retrieves the transaction details of a given transaction at pay.nl
+  """
+    @spec get_transaction_details(options :: %PayNL.Options{}, transaction_id :: String.t) :: {:ok, map} | {:error, any}
+  def get_transaction_details(options, transaction_id) do
+    "/v7/Transaction/info/json?serviceID=#{options.service_id}&token=#{options.api_token}&transactionId=#{transaction_id}"
+    |> new
+    |> get
     |> process_response
   end
 
@@ -83,8 +94,31 @@ defmodule PayNL.Client do
       ), do: {:error, message}
   def extract_transaction_id_and_payment_url(error), do: error
 
+  def extract_payment_status_from_payment_details({:ok, %{"paymentDetails" => %{"state" => state} = _payment_details}}) do
+    result = case String.to_integer(state) do
+      -51 -> :cancel
+      -63 -> :denied
+      -71 -> :chargeback
+      -80 -> :expired
+      -81 -> :refund
+      -82 -> :partial_refund
+      -90 -> :cancel
+      20 -> :pending
+      25 -> :pending
+      50 -> :pending
+      80 -> :partial_paiment
+      85 -> :verify
+      90 -> :pending
+      95 -> :authorize
+      100 -> :paid
+    end
+    {:ok, result}
+  end
+  def extract_payment_status_from_payment_details(_error), do: {:error, :invalid_payment_details}
+
   @spec process_response({:ok, response :: %Maxwell.Conn{}}) :: {:ok, map} | {:error, any}
   defp process_response({:ok, %Maxwell.Conn{status: 401}}), do: {:error, :invalid_api_token_or_service_id}
   defp process_response({:ok, %Maxwell.Conn{status: 200, resp_body: body}}), do: {:ok, body}
+  defp process_response({:ok, %Maxwell.Conn{status: _, resp_body: body}}), do: {:error, body}
   defp process_response({:error, _} = error), do: error
 end

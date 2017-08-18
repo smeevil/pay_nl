@@ -80,5 +80,11 @@ defmodule PayNLTest do
                                                                             |> Enum.uniq
     end
   end
+
+  test "getting payment status" do
+    use_cassette "get_transaction_details" do
+      assert {:ok, :expired} = PayNL.get_payment_status_for("665630593Xec1581")
+    end
+  end
 end
 

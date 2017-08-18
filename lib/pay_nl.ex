@@ -21,6 +21,18 @@ defmodule PayNL do
     |> options_for_country(country)
   end
 
+  @doc """
+  Returns the payment status of a transaction
+  """
+  @spec get_payment_status_for(transaction_id :: String.t) :: {:ok, atom} | {:error, String.t}
+  def get_payment_status_for(transaction_id) do
+    {:ok, credentials} = PayNL.Options.credentials()
+
+    credentials
+    |> PayNL.Client.get_transaction_details(transaction_id)
+    |> PayNL.Client.extract_payment_status_from_payment_details
+  end
+
   @spec request_payment(options :: map | %PayNL.Options{}) :: {:ok, %PayNL.TransActionRequest{}} | {:error, binary}
   def request_payment(options) when is_list(options), do: request_payment(Enum.into(options, %{}))
   def request_payment(%PayNL.Options{} = options) do

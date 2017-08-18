@@ -164,4 +164,11 @@ defmodule PayNL.ClientTest do
              } = List.first(banks)
     end
   end
+
+  test "should return transaction details" do
+    use_cassette "get_transaction_details" do
+      {:ok, credentials} = PayNL.Options.credentials(@valid_params)
+      {:ok, %{"paymentDetails" => _}} = PayNL.Client.get_transaction_details(credentials, "859462273Xbc39dc")
+    end
+  end
 end

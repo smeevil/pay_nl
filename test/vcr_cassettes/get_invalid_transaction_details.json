@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v7/Transaction/info/json?serviceID=SL-8299-1400&token=c352090ba5e3f649f65c37bb16fedea210a310d9&transactionId=gibberish"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"0\",\"errorMessage\":\"Transaction not found\",\"errorId\":\"\"}}",
+      "headers": {
+        "Date": "Fri, 18 Aug 2017 14:33:36 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=28e024c7ff50a2b0223e9ba87caf8b3c501c4fea; expires=Sat, 18-Aug-2018 14:33:36 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Fri, 18 Aug 2017 14:33:36 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "78",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
