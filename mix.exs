@@ -3,7 +3,7 @@ defmodule PayNL.Mixfile do
 
   def project do
     [
-      app: :pay_nl,
+      app: :paynl,
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
