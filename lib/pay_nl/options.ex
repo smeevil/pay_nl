@@ -101,7 +101,7 @@ defmodule PayNL.Options do
        )
     |> validate_required(
          :service_id,
-         message: ~s[has not been set, either pass it along with the params in this function as :service_id, alternatively you can pass it by defining an env var 'PAY_NL_SERVICE_ID=my_service_id' or in you config add 'config :pay_nl, api_token: "my_service_id"']
+         message: ~s[has not been set, either pass it along with the params in this function as :service_id, alternatively you can pass it by defining an env var 'PAY_NL_SERVICE_ID=my_service_id' or in you config add 'config :pay_nl, service_id: "my_service_id"']
        )
   end
 
