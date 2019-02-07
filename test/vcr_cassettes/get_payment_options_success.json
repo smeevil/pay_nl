@@ -1,0 +1,70 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v13/Transaction/getServicePaymentOptions/json?serviceID=TestService&token=TestToken"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"merchant\":{\"id\":\"M-6066-3610\",\"name\":\"Test bv\",\"publicName\":\"Test bv\",\"state\":\"1\"},\"service\":{\"id\":\"TestService\",\"state\":\"0\",\"name\":\"example.com\",\"description\":\"test\",\"publication\":\"https:\\/\\/example.com\",\"basePath\":\"https:\\/\\/admin.pay.nl\\/images\",\"module\":\"2\",\"subModule\":\"24\",\"successUrl\":\"\",\"errorUrl\":\"\"},\"settings\":\"\",\"countryOptionList\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\",\"visibleName\":\"Nederland\",\"in_eu\":\"1\",\"img\":\"nl.gif\",\"path\":\"\\/flags\\/\",\"paymentOptionList\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"img\":\"10.gif\",\"path\":\"\\/payment_profiles\\/\",\"state\":\"1\",\"useOnlyInStore\":\"0\",\"paymentMethodId\":\"4\",\"paymentOptionSubList\":{\"1\":{\"id\":\"1\",\"name\":\"ABN Amro\",\"visibleName\":\"ABN Amro\",\"img\":\"1.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"2\":{\"id\":\"2\",\"name\":\"Rabobank\",\"visibleName\":\"Rabobank\",\"img\":\"2.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"4\":{\"id\":\"4\",\"name\":\"ING\",\"visibleName\":\"ING\",\"img\":\"4.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5\":{\"id\":\"5\",\"name\":\"SNS\",\"visibleName\":\"SNS\",\"img\":\"5.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"8\":{\"id\":\"8\",\"name\":\"ASN Bank\",\"visibleName\":\"ASN Bank\",\"img\":\"8.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"9\":{\"id\":\"9\",\"name\":\"RegioBank\",\"visibleName\":\"RegioBank\",\"img\":\"9.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"10\":{\"id\":\"10\",\"name\":\"Triodos Bank\",\"visibleName\":\"Triodos Bank\",\"img\":\"10.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"11\":{\"id\":\"11\",\"name\":\"Van Lanschot\",\"visibleName\":\"Van Lanschot\",\"img\":\"11.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"12\":{\"id\":\"12\",\"name\":\"Knab\",\"visibleName\":\"Knab\",\"img\":\"12.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5080\":{\"id\":\"5080\",\"name\":\"bunq\",\"visibleName\":\"bunq\",\"img\":\"5080.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5081\":{\"id\":\"5081\",\"name\":\"Moneyou\",\"visibleName\":\"Moneyou\",\"img\":\"5081.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5082\":{\"id\":\"5082\",\"name\":\"Svenska Handelsbanken\",\"visibleName\":\"Svenska Handelsbanken\",\"img\":\"5082.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"}}}}}},\"paymentOptions\":\"\",\"paymentProfiles\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"costsFixed\":\"0\",\"costsPercentage\":\"0\",\"countries\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\"}}}}}",
+      "headers": {
+        "Date": "Wed, 06 Feb 2019 12:00:43 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=ad7dc3699726f102b762c22dc5a74689d86f4b9d; expires=Thu, 06-Feb-2020 12:00:43 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Wed, 06 Feb 2019 12:00:43 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "2292",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v13/Transaction/getServicePaymentOptions/json?serviceID=TestService&token=TestToken"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"merchant\":{\"id\":\"M-6066-3610\",\"name\":\"Test bv\",\"publicName\":\"Test bv\",\"state\":\"1\"},\"service\":{\"id\":\"TestService\",\"state\":\"0\",\"name\":\"example.com\",\"description\":\"test\",\"publication\":\"https:\\/\\/example.com\",\"basePath\":\"https:\\/\\/admin.pay.nl\\/images\",\"module\":\"2\",\"subModule\":\"24\",\"successUrl\":\"\",\"errorUrl\":\"\"},\"settings\":\"\",\"countryOptionList\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\",\"visibleName\":\"Nederland\",\"in_eu\":\"1\",\"img\":\"nl.gif\",\"path\":\"\\/flags\\/\",\"paymentOptionList\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"img\":\"10.gif\",\"path\":\"\\/payment_profiles\\/\",\"state\":\"1\",\"useOnlyInStore\":\"0\",\"paymentMethodId\":\"4\",\"paymentOptionSubList\":{\"1\":{\"id\":\"1\",\"name\":\"ABN Amro\",\"visibleName\":\"ABN Amro\",\"img\":\"1.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"2\":{\"id\":\"2\",\"name\":\"Rabobank\",\"visibleName\":\"Rabobank\",\"img\":\"2.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"4\":{\"id\":\"4\",\"name\":\"ING\",\"visibleName\":\"ING\",\"img\":\"4.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5\":{\"id\":\"5\",\"name\":\"SNS\",\"visibleName\":\"SNS\",\"img\":\"5.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"8\":{\"id\":\"8\",\"name\":\"ASN Bank\",\"visibleName\":\"ASN Bank\",\"img\":\"8.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"9\":{\"id\":\"9\",\"name\":\"RegioBank\",\"visibleName\":\"RegioBank\",\"img\":\"9.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"10\":{\"id\":\"10\",\"name\":\"Triodos Bank\",\"visibleName\":\"Triodos Bank\",\"img\":\"10.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"11\":{\"id\":\"11\",\"name\":\"Van Lanschot\",\"visibleName\":\"Van Lanschot\",\"img\":\"11.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"12\":{\"id\":\"12\",\"name\":\"Knab\",\"visibleName\":\"Knab\",\"img\":\"12.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5080\":{\"id\":\"5080\",\"name\":\"bunq\",\"visibleName\":\"bunq\",\"img\":\"5080.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5081\":{\"id\":\"5081\",\"name\":\"Moneyou\",\"visibleName\":\"Moneyou\",\"img\":\"5081.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5082\":{\"id\":\"5082\",\"name\":\"Svenska Handelsbanken\",\"visibleName\":\"Svenska Handelsbanken\",\"img\":\"5082.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"}}}}}},\"paymentOptions\":\"\",\"paymentProfiles\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"costsFixed\":\"0\",\"costsPercentage\":\"0\",\"countries\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\"}}}}}",
+      "headers": {
+        "Date": "Wed, 06 Feb 2019 12:00:43 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=f424d8661c59a0b46e68bc2d4a391a6f37b9aaac; expires=Thu, 06-Feb-2020 12:00:43 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Wed, 06 Feb 2019 12:00:43 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "2292",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

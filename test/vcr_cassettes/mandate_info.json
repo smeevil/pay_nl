@@ -1,0 +1,37 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "authorization": "Basic VGVzdFRva2VuSUQ6VGVzdFRva2Vu",
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v3/DirectDebit/info/json?mandateId=IO-1213-0213-5680"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"result\":{\"mandate\":{\"mandateId\":\"IO-1213-0213-5680\",\"type\":\"single\",\"bankaccountNumber\":\"NL24ABNA012345678\",\"bankaccounOwner\":\"Test Muppet\",\"bankaccountBic\":\"ABNANL2A\",\"amount\":\"100\",\"description\":\"Test capture\",\"intervalValue\":\"0\",\"intervalPeriod\":\"0\",\"intervalQuantity\":\"1\",\"state\":\"single\",\"ipAddress\":\"185.47.134.204\",\"email\":\"\",\"info\":\"\",\"object\":\"\",\"extra1\":\"\",\"extra2\":\"\"},\"directDebit\":\"\"}}",
+      "headers": {
+        "Date": "Thu, 07 Feb 2019 10:06:54 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=ca970a541d34d3a7dd21a5a109b65ad05d2ea8bf; expires=Fri, 07-Feb-2020 10:06:54 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Thu, 07 Feb 2019 10:06:54 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "461",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

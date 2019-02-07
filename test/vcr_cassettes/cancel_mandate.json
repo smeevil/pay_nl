@@ -1,0 +1,37 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "authorization": "Basic VGVzdFRva2VuSUQ6VGVzdFRva2Vu",
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "method": "get",
+      "options": {
+        "connect_timeout": 3000
+      },
+      "request_body": "",
+      "url": "https://rest-api.pay.nl/v3/DirectDebit/delete/json?mandateId=IO-1213-0213-5680"
+    },
+    "response": {
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"}}",
+      "headers": {
+        "Date": "Thu, 07 Feb 2019 10:08:09 GMT",
+        "Server": "Apache",
+        "Set-Cookie": "device_id=266e7fe118ac3a96aef1e40b05295f22dfd360eb; expires=Fri, 07-Feb-2020 10:08:09 GMT; path=/; domain=.pay.nl; httponly",
+        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
+        "Last-Modified": "Thu, 07 Feb 2019 10:08:09 GMT",
+        "Cache-Control": "post-check=0, pre-check=0",
+        "Pragma": "no-cache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Length": "57",
+        "Connection": "close",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
