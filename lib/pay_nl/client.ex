@@ -1,34 +1,34 @@
 defmodule PayNL.Client do
   @moduledoc """
-  This module wraps the json api of Pay.NL using Maxwell
+  This module wraps the json api of Pay.NL
   """
 
-  use Maxwell.Builder, [:get, :post]
+  defp json_post(path, options \\ nil, data \\ %{}) do
+    IO.puts "Starting request to https://rest-api.pay.nl#{path}"
+    auth_header =
+      if options == nil,
+         do: [],
+         else: [Authorization: "Basic #{Base.encode64("#{options.token_id}:#{options.api_token}")}"]
 
-  middleware Maxwell.Middleware.BaseUrl, "https://rest-api.pay.nl/"
-  middleware Maxwell.Middleware.Headers, %{"content-type" => "application/x-www-form-urlencoded"}
-  middleware Maxwell.Middleware.Opts, connect_timeout: 3000
-  middleware Maxwell.Middleware.Json
-  #  middleware Maxwell.Middleware.Logger
-
-  adapter Maxwell.Adapter.Hackney
+    HTTPotion.post(
+      "https://rest-api.pay.nl#{path}",
+      [
+        body: Poison.encode!(data),
+        headers: ["Content-Type": "application/json"] ++ auth_header
+      ]
+    )
+  end
 
   @doc """
   Will request all available payment options at pay.nl that are associated with the account
   """
-  @spec get_payment_options({:ok, %PayNL.TransactionOptions{}} | %PayNL.TransactionOptions{} | {:error, any}) :: {
-                                                                                                                   :ok,
-                                                                                                                   map
-                                                                                                                 } | {
-                                                                                                                   :error,
-                                                                                                                   any()
-                                                                                                                 }
+  @spec get_payment_options({:ok, %PayNL.TransactionOptions{}} | %PayNL.TransactionOptions{} | {:error, any})
+        :: {:ok, map} | {:error, any()}
   def get_payment_options({:ok, %PayNL.TransactionOptions{} = options}), do: get_payment_options(options)
   def get_payment_options({:error, _} = error), do: error
   def get_payment_options(%PayNL.TransactionOptions{} = options) do
-    "/v13/Transaction/getServicePaymentOptions/json?serviceID=#{options.service_id}&token=#{options.api_token}"
-    |> new
-    |> get
+    "/v13/Transaction/getServicePaymentOptions/json"
+    |> json_post(options, %{serviceId: options.service_id, token: options.api_token})
     |> process_response
     |> PayNL.PaymentOptions.process_results
   end
@@ -39,8 +39,7 @@ defmodule PayNL.Client do
   @spec get_banks :: {:ok, list(%PayNL.Bank{})} | {:error, binary}
   def get_banks do
     "/v13/Transaction/getBanks/json"
-    |> new
-    |> get
+    |> json_post()
     |> process_response
     |> PayNL.Bank.json_to_struct
   end
@@ -50,10 +49,9 @@ defmodule PayNL.Client do
   """
   @spec start_transaction(options :: %PayNL.TransactionOptions{}) :: {:ok, %PayNL.TransActionRequest{}}
   def start_transaction(%PayNL.TransactionOptions{} = options) do
+    payload = PayNL.TransactionOptions.to_post_map(options)
     "/v13/Transaction/start/json"
-    |> new
-    |> put_req_body(PayNL.TransactionOptions.to_post_map(options))
-    |> post
+    |> json_post(options, payload)
     |> process_response
   end
 
@@ -62,10 +60,9 @@ defmodule PayNL.Client do
   """
   @spec capture_payment(options :: %PayNL.CaptureOptions{}) :: {:ok, any}
   def capture_payment(%PayNL.CaptureOptions{} = options) do
+    payload = PayNL.CaptureOptions.to_post_map(options)
     "/v3/DirectDebit/debitAdd/json"
-    |> new
-    |> put_req_body(PayNL.CaptureOptions.to_post_map(options))
-    |> post
+    |> json_post(options, payload)
     |> process_response
   end
 
@@ -77,29 +74,22 @@ defmodule PayNL.Client do
     any
   }
   def get_transaction_details(options, transaction_id) do
-    "/v13/Transaction/info/json?serviceID=#{options.service_id}&token=#{options.api_token}&transactionId=#{
-      transaction_id
-    }"
-    |> new
-    |> get
+    "/v13/Transaction/info/json"
+    |> json_post(options, %{serviceId: options.service_id, token: options.api_token, transactionId: transaction_id})
     |> process_response
   end
 
   @spec get_mandate_details(options :: %PayNL.TransactionOptions{}, mandate :: String.t) :: {:ok, map} | {:error, any}
   def get_mandate_details(options, mandate) do
-    "/v3/DirectDebit/info/json?mandateId=#{mandate}"
-    |> new
-    |> put_req_header("Authorization", "Basic " <> Base.encode64("#{options.token_id}:#{options.api_token}"))
-    |> get
+    "/v3/DirectDebit/info/json"
+    |> json_post(options, %{mandateId: mandate})
     |> process_response
   end
 
   @spec cancel_capture(options :: %PayNL.TransactionOptions{}, mandate :: String.t) :: {:ok, map} | {:error, any}
   def cancel_capture(options, mandate) do
-    "/v3/DirectDebit/delete/json?mandateId=#{mandate}"
-    |> new
-    |> put_req_header("Authorization", "Basic " <> Base.encode64("#{options.token_id}:#{options.api_token}"))
-    |> get
+    "/v3/DirectDebit/delete/json"
+    |> json_post(options, %{mandateId: mandate})
     |> process_response
   end
 
@@ -162,8 +152,26 @@ defmodule PayNL.Client do
         }
       ), do: {:error, message}
 
-  def extract_success_or_error({:ok, %{"request" => %{"result" => "1"}}}), do: {:ok, :success}
-  def extract_success_or_error({:ok, %{"request" => %{"errorMessage" => error}}}), do: {:error, error}
+  def extract_success_or_error(
+        {
+          :ok,
+          %{
+            "request" => %{
+              "result" => "1"
+            }
+          }
+        }
+      ), do: {:ok, :success}
+  def extract_success_or_error(
+        {
+          :ok,
+          %{
+            "request" => %{
+              "errorMessage" => error
+            }
+          }
+        }
+      ), do: {:error, error}
 
   def extract_payment_status_from_payment_details(
         {:ok, %{"paymentDetails" => %{"state" => state} = _payment_details}}
@@ -189,11 +197,82 @@ defmodule PayNL.Client do
   end
   def extract_payment_status_from_payment_details(_error), do: {:error, :invalid_payment_details}
 
-  @spec process_response({:ok, response :: %Maxwell.Conn{}}) :: {:ok, map} | {:error, any}
-  defp process_response({:ok, %Maxwell.Conn{status: 401}}), do: {:error, :invalid_api_token_or_service_id}
-  defp process_response({:ok, %Maxwell.Conn{status: 200, resp_body: body}}), do: {:ok, body}
-  defp process_response({:ok, %Maxwell.Conn{status: _, resp_body: body}}), do: {:error, body}
-  defp process_response({:error, message, _maxwell_conn}), do: {:error, message}
-  defp process_response({:error, _} = error), do: error
+
+  def extract_payment_status_from_capture_details(
+        {
+          :ok,
+          %{
+            "request" => %{
+              "errorId" => error_id
+            }
+          }
+        }
+      ) when error_id != "" do
+    result = case error_id do
+      "100" -> :general_error
+      "101" -> :invalid_amount
+      "102" -> :date_to_early
+      "103" -> :invalid_interval
+      "104" -> :interval_value_has_been_reached
+      "105" -> :interval_must_be_higher_then_zero
+      "201" -> :cant_start_on_own_bank_account
+      "202" -> :invalid_service_or_not_enabled
+      "203" -> :exceeds_max_order_amount
+      "204" -> :back_account_blacklisted
+      "205" -> :max_orders_for_bank_account_reached
+      "206" -> :account_reached_max_debit
+      "207" -> :date_to_early
+      "403" -> :access_denied
+      "404" -> :invalid_value_or_parameter
+      "405" -> :invalid_input
+      "500" -> :internal_error
+    end
+    {:error, result}
+  end
+
+  def extract_payment_status_from_capture_details(
+        {
+          :ok,
+          %{
+            "result" => %{
+              "directDebit" => ""
+            }
+          }
+        }
+      ), do: {:ok, :scheduled}
+
+  def extract_payment_status_from_capture_details(
+        {
+          :ok,
+          %{
+            "result" => %{
+              "directDebit" => [%{"statusCode" => state}]
+            }
+          }
+        }
+      ) do
+    result = case state do
+      "100" -> :success
+      "94" -> :processing
+      "106" -> :reverted
+      "91" -> :pending
+      "526" -> :batched
+      "97" -> :declined_by_paynl
+      "103" -> :removed
+      "127" -> :declined_by_bank
+    end
+    {:ok, result}
+  end
+  def extract_payment_status_from_capture_details(error) do
+    IO.inspect(error, label: "capture details")
+    {:error, :invalid_capture_details}
+  end
+
+  @spec process_response(response :: %HTTPotion.Response{}) :: {:ok, map} | {:error, any}
+  defp process_response(%HTTPotion.Response{status_code: 401}), do: {:error, :invalid_api_token_or_service_id}
+  defp process_response(%HTTPotion.Response{status_code: 200, body: body}), do: {:ok, Poison.decode!(body)}
+  defp process_response(%HTTPotion.Response{status_code: _, body: body}), do: {:error, body}
+  defp process_response(%HTTPotion.ErrorResponse{message: message}), do: {:error, message}
+  defp process_response(error), do: error
 
 end

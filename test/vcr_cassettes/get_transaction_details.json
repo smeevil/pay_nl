@@ -1,31 +1,30 @@
 [
   {
     "request": {
-      "body": "",
+      "body": "{\"transactionId\":\"1043645302Xc611c\",\"token\":\"TestToken\",\"serviceId\":\"TestService\"}",
       "headers": {
-        "content-type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/json",
+        "authentication": "BASIC VGVzdFRva2VuOlRlc3RUb2tlbg=="
       },
-      "method": "get",
-      "options": {
-        "connect_timeout": 3000
-      },
+      "method": "post",
+      "options": [],
       "request_body": "",
-      "url": "https://rest-api.pay.nl/v13/Transaction/info/json?serviceID=TestService&token=TestToken&transactionId=859462273Xbc39dc"
+      "url": "https://rest-api.pay.nl/v13/Transaction/info/json"
     },
     "response": {
-      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"connection\":{\"trust\":\"10\",\"country\":\"Unknown\",\"city\":\"\",\"locationLat\":\"\",\"locationLon\":\"\",\"browserData\":\"\",\"ipAddress\":\"127.0.0.1\",\"countryName\":\"Unknown\",\"blacklist\":\"0\",\"host\":\"localhost\",\"orderIpAddress\":\"127.0.0.1\",\"orderReturnURL\":\"http:\\/\\/www.example.com\\/finished\",\"merchantCode\":\"M-1234-4321\",\"merchantName\":\"TestBV\"},\"enduser\":{\"language\":\"en\",\"accessCode\":\"\",\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"dob\":\"\",\"phoneNumber\":\"\",\"emailAddress\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"sendConfirmMail\":\"\",\"confirmMailTemplate\":\"\",\"customerReference\":\"\",\"customerTrust\":\"\",\"address\":{\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"countryCode\":\"NL\"},\"invoiceAddress\":{\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"countryCode\":\"NL\"},\"company\":{\"name\":\"\",\"cocNumber\":\"\",\"vatNumber\":\"\",\"countryCode\":\"NL\"}},\"saleData\":{\"invoiceDate\":\"\",\"deliveryDate\":\"\",\"orderData\":\"\"},\"paymentDetails\":{\"amount\":\"1000\",\"currenyAmount\":\"1000\",\"paidAmount\":\"0\",\"paidCurrenyAmount\":\"0\",\"paidBase\":\"0\",\"paidCosts\":\"0\",\"paidCostsVat\":\"0\",\"paidCurrency\":\"EUR\",\"paidAttemps\":\"1\",\"paidDuration\":\"0\",\"description\":\"Pay.nl 8594 6227 3073 5613\",\"processTime\":\"14937\",\"state\":\"-80\",\"stateName\":\"CANCEL\",\"stateDescription\":\"Expired\",\"exchange\":\"\",\"storno\":\"0\",\"paymentOptionId\":\"10\",\"paymentOptionSubId\":\"0\",\"secure\":\"0\",\"secureStatus\":\"\",\"identifierName\":\"\",\"identifierPublic\":\"\",\"identifierHash\":\"\",\"cardExpire\":\"\",\"customerKey\":\"\",\"serviceId\":\"TestService\",\"serviceName\":\"example.com\",\"serviceDescription\":\"Example\",\"created\":\"2017-07-25 09:38:33\",\"modified\":\"2017-07-25 13:47:30\",\"paymentMethodId\":\"4\",\"paymentMethodName\":\"Transacties \",\"paymentMethodDescription\":\"Pay Per Transaction\",\"paymentProfileName\":\"iDEAL\",\"cardBrand\":\"\",\"cardType\":\"\",\"cardCountryCode\":\"\"},\"statsDetails\":{\"tool\":\"\",\"info\":\"\",\"object\":\"\",\"extra1\":\"\",\"extra2\":\"\",\"extra3\":\"\",\"promotorId\":\"0\",\"transferData\":\"\",\"paymentSessionId\":\"859462273\"},\"stornoDetails\":{\"stornoId\":\"\",\"stornoAmount\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"city\":\"\",\"datetime\":\"\",\"reason\":\"\",\"emailAddress\":\"\"}}",
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"connection\":{\"trust\":\"10\",\"country\":\"Unknown\",\"city\":\"\",\"locationLat\":\"\",\"locationLon\":\"\",\"browserData\":\"\",\"ipAddress\":\"127.0.0.1\",\"countryName\":\"Unknown\",\"blacklist\":\"0\",\"host\":\"127.0.0.1\",\"orderIpAddress\":\"127.0.0.1\",\"orderReturnURL\":\"https:\\/\\/example.com\\/return\",\"merchantCode\":\"M-6066-3610\",\"merchantName\":\"TestCompany bv\"},\"enduser\":{\"accessCode\":\"\",\"language\":\"NL\",\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"dob\":\"\",\"phoneNumber\":\"\",\"emailAddress\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"sendConfirmMail\":\"\",\"confirmMailTemplate\":\"\",\"customerReference\":\"\",\"customerTrust\":\"\",\"address\":{\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"regionCode\":\"\",\"countryCode\":\"NL\"},\"invoiceAddress\":{\"initials\":\"\",\"lastName\":\"\",\"gender\":\"\",\"streetName\":\"\",\"streetNumber\":\"\",\"streetNumberExtension\":\"\",\"zipCode\":\"\",\"city\":\"\",\"regionCode\":\"\",\"countryCode\":\"NL\"},\"company\":{\"name\":\"\",\"cocNumber\":\"\",\"vatNumber\":\"\",\"countryCode\":\"NL\"}},\"saleData\":{\"invoiceDate\":\"\",\"deliveryDate\":\"\",\"orderData\":\"\"},\"paymentDetails\":{\"amount\":{\"value\":\"100\",\"currency\":\"EUR\"},\"paidBase\":\"0\",\"paidCosts\":\"0\",\"paidCostsVat\":\"0\",\"paidAttemps\":\"1\",\"paidDuration\":\"0\",\"description\":\"1043 6453 0200 0000\",\"processTime\":\"0\",\"state\":\"20\",\"stateName\":\"PENDING\",\"stateDescription\":\"Initialized\",\"exchange\":\"\",\"storno\":\"0\",\"paymentOptionId\":\"613\",\"paymentOptionSubId\":\"0\",\"secure\":\"0\",\"secureStatus\":\"\",\"identifierName\":\"\",\"identifierPublic\":\"\",\"identifierHash\":\"\",\"cardExpire\":\"\",\"customerKey\":\"\",\"serviceId\":\"TestService\",\"serviceName\":\"example.com\",\"serviceDescription\":\"testproduct\",\"created\":\"2019-02-11 14:38:13\",\"modified\":\"2019-02-11 14:38:13\",\"paymentMethodId\":\"4\",\"paymentMethodName\":\"Transacties \",\"paymentMethodDescription\":\"Pay Per Transaction\",\"paymentProfileName\":\"SandBox\",\"orderNumber\":\"424132\",\"cardBrand\":\"\",\"cardType\":\"\",\"cardCountryCode\":\"\",\"paymentProfileBrandName\":\"\",\"paymentProfileCategoryName\":\"\",\"amountOriginal\":{\"value\":\"100\",\"currency\":\"EUR\"},\"amountPaidOriginal\":{\"value\":\"0\",\"currency\":\"EUR\"},\"amountPaid\":{\"value\":\"0\",\"currency\":\"EUR\"}},\"statsDetails\":{\"tool\":\"\",\"info\":\"\",\"object\":\"\",\"extra1\":\"\",\"extra2\":\"\",\"extra3\":\"\",\"promotorId\":\"0\",\"domainId\":\"\",\"transferData\":\"\",\"paymentSessionId\":\"1043645302\"},\"stornoDetails\":{\"stornoId\":\"\",\"stornoAmount\":\"\",\"bankAccount\":\"\",\"iban\":\"\",\"bic\":\"\",\"city\":\"\",\"datetime\":\"\",\"reason\":\"\",\"emailAddress\":\"\"}}",
       "headers": {
-        "Date": "Fri, 18 Aug 2017 14:08:37 GMT",
+        "Date": "Mon, 11 Feb 2019 13:41:23 GMT",
         "Server": "Apache",
-        "Set-Cookie": "device_id=3a9e1f373a22e6cf226c0480374e342bb34a92d2; expires=Sat, 18-Aug-2018 14:08:37 GMT; path=/; domain=.pay.nl; httponly",
+        "Set-Cookie": "device_id=4315f023e74362b860c4c5963952a8a591765f5a; expires=Tue, 11-Feb-2020 13:41:23 GMT; path=/; domain=.pay.nl; httponly",
         "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Fri, 18 Aug 2017 14:08:37 GMT",
+        "Last-Modified": "Mon, 11 Feb 2019 13:41:23 GMT",
         "Cache-Control": "post-check=0, pre-check=0",
         "Pragma": "no-cache",
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
-        "Content-Length": "2471",
+        "Content-Length": "2438",
         "Connection": "close",
         "Content-Type": "application/json"
       },

@@ -1,7 +1,8 @@
 defmodule PayNL.PaymentNotificationTest do
 
   use ExUnit.Case, async: false
-  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
+  use ExVCR.Mock
+
 
   setup_all do
     ExVCR.Config.cassette_library_dir("test/vcr_cassettes")
@@ -41,7 +42,7 @@ defmodule PayNL.PaymentNotificationTest do
 
   test "it can refute a payment notification" do
     use_cassette "get_invalid_transaction_details" do
-      assert {:error, "Transaction not found"} = PayNL.PaymentNotification.verify(Map.put(@ipn, "order_id", "gibberish"))
+      assert {:error, "could not verify transaction"} = PayNL.PaymentNotification.verify(Map.put(@ipn, "order_id", "gibberish"))
     end
   end
 end

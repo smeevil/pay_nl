@@ -1,35 +1,31 @@
 [
   {
     "request": {
-      "body": "",
+      "body": "{\"transactionId\":\"gibberish\",\"token\":\"TestToken\",\"serviceId\":\"TestService\"}",
       "headers": {
-        "content-type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/json",
+        "Authorization": "Basic VGVzdFRva2VuOlRlc3RUb2tlbg=="
       },
-      "method": "get",
-      "options": {
-        "connect_timeout": 3000
-      },
+      "method": "post",
+      "options": [],
       "request_body": "",
-      "url": "https://rest-api.pay.nl/v13/Transaction/info/json?serviceID=TestService&token=TestToken&transactionId=gibberish"
+      "url": "https://rest-api.pay.nl/v13/Transaction/info/json"
     },
     "response": {
-      "body": "{\"request\":{\"result\":\"0\",\"errorMessage\":\"Transaction not found\",\"errorId\":\"\"}}",
+      "body": "",
       "headers": {
-        "Date": "Fri, 18 Aug 2017 14:33:36 GMT",
+        "Date": "Mon, 11 Feb 2019 14:16:27 GMT",
         "Server": "Apache",
-        "Set-Cookie": "device_id=28e024c7ff50a2b0223e9ba87caf8b3c501c4fea; expires=Sat, 18-Aug-2018 14:33:36 GMT; path=/; domain=.pay.nl; httponly",
-        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Fri, 18 Aug 2017 14:33:36 GMT",
-        "Cache-Control": "post-check=0, pre-check=0",
-        "Pragma": "no-cache",
+        "Set-Cookie": "device_id=e85c3564616bd380659b6c71dbb26cfeeb5d8ec5; expires=Tue, 11-Feb-2020 14:16:27 GMT; path=/; domain=.pay.nl; httponly",
+        "WWW-Authenticate": "Basic realm=\"Pay.nl API\"",
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
-        "Content-Length": "78",
+        "Content-Length": "0",
         "Connection": "close",
-        "Content-Type": "application/json"
+        "Content-Type": "text/html"
       },
-      "status_code": 200,
+      "status_code": 401,
       "type": "ok"
     }
   }

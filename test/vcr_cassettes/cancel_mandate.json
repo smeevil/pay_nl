@@ -1,26 +1,24 @@
 [
   {
     "request": {
-      "body": "",
+      "body": "{\"mandateId\":\"IO-9590-1286-3280\"}",
       "headers": {
-        "authorization": "Basic VGVzdFRva2VuSUQ6VGVzdFRva2Vu",
-        "content-type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/json",
+        "Authorization": "Basic VGVzdFRva2VuOlRlc3RUb2tlbg=="
       },
-      "method": "get",
-      "options": {
-        "connect_timeout": 3000
-      },
+      "method": "post",
+      "options": [],
       "request_body": "",
-      "url": "https://rest-api.pay.nl/v3/DirectDebit/delete/json?mandateId=IO-1213-0213-5680"
+      "url": "https://rest-api.pay.nl/v3/DirectDebit/delete/json"
     },
     "response": {
       "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"}}",
       "headers": {
-        "Date": "Thu, 07 Feb 2019 10:08:09 GMT",
+        "Date": "Mon, 11 Feb 2019 13:55:35 GMT",
         "Server": "Apache",
-        "Set-Cookie": "device_id=266e7fe118ac3a96aef1e40b05295f22dfd360eb; expires=Fri, 07-Feb-2020 10:08:09 GMT; path=/; domain=.pay.nl; httponly",
+        "Set-Cookie": "device_id=f68d63bfa224c9c0aa9228dd4a3ca20df399a993; expires=Tue, 11-Feb-2020 13:55:35 GMT; path=/; domain=.pay.nl; httponly",
         "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Thu, 07 Feb 2019 10:08:09 GMT",
+        "Last-Modified": "Mon, 11 Feb 2019 13:55:35 GMT",
         "Cache-Control": "post-check=0, pre-check=0",
         "Pragma": "no-cache",
         "X-Frame-Options": "SAMEORIGIN",

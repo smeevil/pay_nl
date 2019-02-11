@@ -36,11 +36,10 @@ defmodule PayNL.Mixfile do
   defp deps do
     [
       {:cortex, ">= 0.0.0", only: [:dev, :test]},
-      {:maxwell, ">= 0.0.0"},
       {:exvcr, ">= 0.0.0", only: [:dev, :test]},
       {:ecto, ">= 0.0.0"},
       {:poison, ">= 0.0.0"},
-      {:hackney, ">= 0.0.0"},
+      {:httpotion, ">= 0.0.0"},
       {:excoveralls, ">= 0.0.0", only: [:test]},
       {:dialyxir, "~> 1.0.0-rc.3", only: [:dev], runtime: false},
       {:credo, ">= 0.0.0", only: [:test, :dev]},

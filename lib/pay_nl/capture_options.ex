@@ -13,6 +13,7 @@ defmodule PayNL.CaptureOptions do
     field :currency, :string, default: "EUR"
     field :notification_url, :string
     field :service_id, :string
+    field :token_id, :string
 
     field :bank_account_holder, :string
     field :bank_account_number, :string
@@ -28,7 +29,8 @@ defmodule PayNL.CaptureOptions do
     :bank_account_number,
     :currency,
     :notification_url,
-    :service_id
+    :service_id,
+    :token_id
   ]
 
   @optional_fields [
@@ -84,6 +86,7 @@ defmodule PayNL.CaptureOptions do
     params
     |> Map.put_new(:service_id, System.get_env("PAY_NL_SERVICE_ID") || Application.get_env(:pay_nl, :service_id))
     |> Map.put_new(:api_token, System.get_env("PAY_NL_API_TOKEN") || Application.get_env(:pay_nl, :api_token))
+    |> Map.put_new(:token_id, System.get_env("PAY_NL_TOKEN_ID") || Application.get_env(:pay_nl, :token_id))
     |> Map.put_new(:return_url, Application.get_env(:pay_nl, :return_url))
     |> Map.put_new(:notification_url, Application.get_env(:pay_nl, :notification_url))
   end

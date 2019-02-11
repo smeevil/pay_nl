@@ -1,31 +1,29 @@
 [
   {
     "request": {
-      "body": "",
+      "body": "{}",
       "headers": {
-        "content-type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/json"
       },
-      "method": "get",
-      "options": {
-        "connect_timeout": 3000
-      },
+      "method": "post",
+      "options": [],
       "request_body": "",
       "url": "https://rest-api.pay.nl/v13/Transaction/getBanks/json"
     },
     "response": {
-      "body": "[{\"id\":\"1\",\"name\":\"ABN Amro\",\"issuerId\":\"0031\",\"swift\":\"ABNANL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankAbnAmro.png\",\"available\":\"1\"},{\"id\":\"2\",\"name\":\"Rabobank\",\"issuerId\":\"0021\",\"swift\":\"RABONL2U\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankRabobank.png\",\"available\":\"1\"},{\"id\":\"4\",\"name\":\"ING Bank\",\"issuerId\":\"0721\",\"swift\":\"INGBNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankIngBank.png\",\"available\":\"1\"},{\"id\":\"5\",\"name\":\"SNS Bank\",\"issuerId\":\"0751\",\"swift\":\"SNSBNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankSnsReaal.png\",\"available\":\"1\"},{\"id\":\"8\",\"name\":\"ASN Bank\",\"issuerId\":\"0761\",\"swift\":\"ASNBNL21\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankASNBank.png\",\"available\":\"1\"},{\"id\":\"9\",\"name\":\"RegioBank\",\"issuerId\":\"0771\",\"swift\":\"RBRBNL21\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankSNSRegioBank.png\",\"available\":\"1\"},{\"id\":\"10\",\"name\":\"Triodos Bank\",\"issuerId\":\"0511\",\"swift\":\"TRIONL2U\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankTriodos.png\",\"available\":\"1\"},{\"id\":\"11\",\"name\":\"Van Lanschot Bankiers\",\"issuerId\":\"0161\",\"swift\":\"FVLBNL22\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankLanschot.png\",\"available\":\"1\"},{\"id\":\"12\",\"name\":\"Knab bank\",\"issuerId\":\"0801\",\"swift\":\"KNABNL2H\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankKnab.png\",\"available\":\"1\"},{\"id\":\"5080\",\"name\":\"Bunq\",\"issuerId\":\"0066\",\"swift\":\"BUNQNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankBunq.png\",\"available\":\"1\"}]",
+      "body": "[{\"id\":\"1\",\"name\":\"ABN Amro\",\"issuerId\":\"0031\",\"swift\":\"ABNANL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankAbnAmro.png\",\"available\":\"1\"},{\"id\":\"2\",\"name\":\"Rabobank\",\"issuerId\":\"0021\",\"swift\":\"RABONL2U\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankRabobank.png\",\"available\":\"1\"},{\"id\":\"4\",\"name\":\"ING\",\"issuerId\":\"0721\",\"swift\":\"INGBNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankIngBank.png\",\"available\":\"1\"},{\"id\":\"5\",\"name\":\"SNS\",\"issuerId\":\"0751\",\"swift\":\"SNSBNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankSnsReaal.png\",\"available\":\"1\"},{\"id\":\"8\",\"name\":\"ASN Bank\",\"issuerId\":\"0761\",\"swift\":\"ASNBNL21\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankASNBank.png\",\"available\":\"1\"},{\"id\":\"9\",\"name\":\"RegioBank\",\"issuerId\":\"0771\",\"swift\":\"RBRBNL21\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankSNSRegioBank.png\",\"available\":\"1\"},{\"id\":\"10\",\"name\":\"Triodos Bank\",\"issuerId\":\"0511\",\"swift\":\"TRIONL2U\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankTriodos.png\",\"available\":\"1\"},{\"id\":\"11\",\"name\":\"Van Lanschot\",\"issuerId\":\"0161\",\"swift\":\"FVLBNL22\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankLanschot.png\",\"available\":\"1\"},{\"id\":\"12\",\"name\":\"Knab\",\"issuerId\":\"0801\",\"swift\":\"KNABNL2H\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankKnab.png\",\"available\":\"1\"},{\"id\":\"5080\",\"name\":\"bunq\",\"issuerId\":\"0066\",\"swift\":\"BUNQNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankBunq.png\",\"available\":\"1\"},{\"id\":\"5081\",\"name\":\"Moneyou\",\"issuerId\":\"5081\",\"swift\":\"MOYONL21\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankmoneyou.png\",\"available\":\"1\"},{\"id\":\"5082\",\"name\":\"Svenska Handelsbanken\",\"issuerId\":\"5082\",\"swift\":\"HANDNL2A\",\"icon\":\"https:\\/\\/www.pay.nl\\/betalen\\/images\\/tas2iDealBankHandelsbanken.png\",\"available\":\"1\"}]",
       "headers": {
-        "Date": "Tue, 15 Aug 2017 09:31:28 GMT",
+        "Date": "Mon, 11 Feb 2019 13:40:40 GMT",
         "Server": "Apache",
-        "Set-Cookie": "device_id=6c1986823f8690f7c9c9e2c856b8a348f4c856a7; expires=Wed, 15-Aug-2018 09:31:28 GMT; path=/; domain=.pay.nl; httponly",
+        "Set-Cookie": "device_id=022c5dd937d551cffd9656464dccf0a2446b38a0; expires=Tue, 11-Feb-2020 13:40:40 GMT; path=/; domain=.pay.nl; httponly",
         "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Tue, 15 Aug 2017 09:31:28 GMT",
+        "Last-Modified": "Mon, 11 Feb 2019 13:40:40 GMT",
         "Cache-Control": "post-check=0, pre-check=0",
         "Pragma": "no-cache",
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
-        "Content-Length": "1574",
+        "Content-Length": "1884",
         "Connection": "close",
         "Content-Type": "application/json"
       },

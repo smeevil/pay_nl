@@ -49,6 +49,7 @@ defmodule PayNL do
     |> PayNL.Client.extract_payment_status_from_payment_details
   end
 
+
   @spec request_payment(options :: map | %PayNL.TransactionOptions{}) :: {:ok, %PayNL.TransActionRequest{}} | {:error,  any}
   def request_payment(options) when is_list(options), do: request_payment(Enum.into(options, %{}))
   def request_payment(%PayNL.TransactionOptions{} = options) do
@@ -67,7 +68,7 @@ defmodule PayNL do
   def capture_payment(%PayNL.CaptureOptions{} = options) do
     options
     |> PayNL.Client.capture_payment()
-    |> PayNL.Client.extract_mandate
+    |> PayNL.Client.extract_mandate()
   end
   def capture_payment(options) when is_map(options) do
     case PayNL.CaptureOptions.create(options) do
@@ -91,6 +92,7 @@ defmodule PayNL do
 
     credentials
     |> PayNL.Client.get_mandate_details(mandate)
+    |> PayNL.Client.extract_payment_status_from_capture_details
   end
 
   @spec options_for_country({:ok, list(%PayNL.TransactionOptions{})}, country :: String.t) ::

@@ -1,59 +1,24 @@
 [
   {
     "request": {
-      "body": "",
+      "body": "{\"token\":\"TestToken\",\"serviceId\":\"TestService\",\"exchangeUrl\":\"https://smee.io/paynl_ipn\",\"description\":\"Test capture\",\"currency\":\"EUR\",\"bankAccountNumber\":\"NL24ABNA0123456789\",\"bankAccountHolder\":\"Test Muppet\",\"amount\":100}",
       "headers": {
-        "content-type": "application/x-www-form-urlencoded"
-      },
-      "method": "get",
-      "options": {
-        "connect_timeout": 3000
-      },
-      "request_body": "",
-      "url": "https://rest-api.pay.nl/v13/Transaction/getServicePaymentOptions/json?serviceID=TestService&token=TestToken"
-    },
-    "response": {
-      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"merchant\":{\"id\":\"M-6066-3610\",\"name\":\"Test bv\",\"publicName\":\"Test bv\",\"state\":\"1\"},\"service\":{\"id\":\"TestService\",\"state\":\"0\",\"name\":\"example.com\",\"description\":\"test\",\"publication\":\"https:\\/\\/example.com\",\"basePath\":\"https:\\/\\/admin.pay.nl\\/images\",\"module\":\"2\",\"subModule\":\"24\",\"successUrl\":\"\",\"errorUrl\":\"\"},\"settings\":\"\",\"countryOptionList\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\",\"visibleName\":\"Nederland\",\"in_eu\":\"1\",\"img\":\"nl.gif\",\"path\":\"\\/flags\\/\",\"paymentOptionList\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"img\":\"10.gif\",\"path\":\"\\/payment_profiles\\/\",\"state\":\"1\",\"useOnlyInStore\":\"0\",\"paymentMethodId\":\"4\",\"paymentOptionSubList\":{\"1\":{\"id\":\"1\",\"name\":\"ABN Amro\",\"visibleName\":\"ABN Amro\",\"img\":\"1.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"2\":{\"id\":\"2\",\"name\":\"Rabobank\",\"visibleName\":\"Rabobank\",\"img\":\"2.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"4\":{\"id\":\"4\",\"name\":\"ING\",\"visibleName\":\"ING\",\"img\":\"4.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5\":{\"id\":\"5\",\"name\":\"SNS\",\"visibleName\":\"SNS\",\"img\":\"5.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"8\":{\"id\":\"8\",\"name\":\"ASN Bank\",\"visibleName\":\"ASN Bank\",\"img\":\"8.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"9\":{\"id\":\"9\",\"name\":\"RegioBank\",\"visibleName\":\"RegioBank\",\"img\":\"9.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"10\":{\"id\":\"10\",\"name\":\"Triodos Bank\",\"visibleName\":\"Triodos Bank\",\"img\":\"10.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"11\":{\"id\":\"11\",\"name\":\"Van Lanschot\",\"visibleName\":\"Van Lanschot\",\"img\":\"11.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"12\":{\"id\":\"12\",\"name\":\"Knab\",\"visibleName\":\"Knab\",\"img\":\"12.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5080\":{\"id\":\"5080\",\"name\":\"bunq\",\"visibleName\":\"bunq\",\"img\":\"5080.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5081\":{\"id\":\"5081\",\"name\":\"Moneyou\",\"visibleName\":\"Moneyou\",\"img\":\"5081.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"},\"5082\":{\"id\":\"5082\",\"name\":\"Svenska Handelsbanken\",\"visibleName\":\"Svenska Handelsbanken\",\"img\":\"5082.png\",\"path\":\"\\/payment_banks\\/\",\"state\":\"1\"}}},\"137\":{\"id\":\"137\",\"name\":\"Incasso\",\"visibleName\":\"Incasso\",\"img\":\"137.gif\",\"path\":\"\\/payment_profiles\\/\",\"state\":\"1\",\"useOnlyInStore\":\"0\",\"paymentMethodId\":\"4\",\"paymentOptionSubList\":\"\"}}}},\"paymentOptions\":\"\",\"paymentProfiles\":{\"10\":{\"id\":\"10\",\"name\":\"iDEAL\",\"visibleName\":\"iDEAL\",\"costsFixed\":\"0\",\"costsPercentage\":\"0\",\"countries\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\"}}},\"137\":{\"id\":\"137\",\"name\":\"Incasso\",\"visibleName\":\"Incasso\",\"costsFixed\":\"0\",\"costsPercentage\":\"0\",\"countries\":{\"NL\":{\"id\":\"NL\",\"name\":\"Nederland\"}}}}}",
-      "headers": {
-        "Date": "Thu, 07 Feb 2019 10:05:10 GMT",
-        "Server": "Apache",
-        "Set-Cookie": "device_id=f73a514daf8a563ff47e2b441920d8b18acce469; expires=Fri, 07-Feb-2020 10:05:10 GMT; path=/; domain=.pay.nl; httponly",
-        "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Thu, 07 Feb 2019 10:05:10 GMT",
-        "Cache-Control": "post-check=0, pre-check=0",
-        "Pragma": "no-cache",
-        "X-Frame-Options": "SAMEORIGIN",
-        "X-XSS-Protection": "1; mode=block",
-        "X-Content-Type-Options": "nosniff",
-        "Content-Length": "2628",
-        "Connection": "close",
-        "Content-Type": "application/json"
-      },
-      "status_code": 200,
-      "type": "ok"
-    }
-  },
-  {
-    "request": {
-      "body": "{\"token\":\"TestToken\",\"serviceId\":\"TestService\",\"exchangeUrl\":\"https://smee.io/paynl_ipn\",\"description\":\"Test capture\",\"currency\":\"EUR\",\"bankAccountNumber\":\"NL24ABNA01234567\",\"bankAccountHolder\":\"Test Muppet\",\"amount\":100}",
-      "headers": {
-        "content-type": "application/json"
+        "Content-Type": "application/json",
+        "authentication": "BASIC VGVzdFRva2VuOlRlc3RUb2tlbg=="
       },
       "method": "post",
-      "options": {
-        "connect_timeout": 3000
-      },
+      "options": [],
       "request_body": "",
       "url": "https://rest-api.pay.nl/v3/DirectDebit/debitAdd/json"
     },
     "response": {
-      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"result\":\"IO-1213-0213-5680\"}",
+      "body": "{\"request\":{\"result\":\"1\",\"errorId\":\"\",\"errorMessage\":\"\"},\"result\":\"IO-9590-1286-3280\"}",
       "headers": {
-        "Date": "Thu, 07 Feb 2019 10:05:10 GMT",
+        "Date": "Mon, 11 Feb 2019 13:51:09 GMT",
         "Server": "Apache",
-        "Set-Cookie": "device_id=a812c7338458ac1d6dfd7d466fc64bb00eec9815; expires=Fri, 07-Feb-2020 10:05:10 GMT; path=/; domain=.pay.nl; httponly",
+        "Set-Cookie": "device_id=8cad27b0595b4b6df2a818da4bd294992845ddd9; expires=Tue, 11-Feb-2020 13:51:09 GMT; path=/; domain=.pay.nl; httponly",
         "Expires": "Mon, 26 Jul 1990 05:00:00 GMT",
-        "Last-Modified": "Thu, 07 Feb 2019 10:05:10 GMT",
+        "Last-Modified": "Mon, 11 Feb 2019 13:51:09 GMT",
         "Cache-Control": "post-check=0, pre-check=0",
         "Pragma": "no-cache",
         "X-Frame-Options": "SAMEORIGIN",
