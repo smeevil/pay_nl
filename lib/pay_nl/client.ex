@@ -4,7 +4,6 @@ defmodule PayNL.Client do
   """
 
   defp json_post(path, options \\ nil, data \\ %{}) do
-    IO.puts "Starting request to https://rest-api.pay.nl#{path}"
     auth_header =
       if options == nil,
          do: [],
