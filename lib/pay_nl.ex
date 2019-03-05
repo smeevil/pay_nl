@@ -50,7 +50,7 @@ defmodule PayNL do
   end
 
 
-  @spec request_payment(options :: map | %PayNL.TransactionOptions{}) :: {:ok, %PayNL.TransActionRequest{}} | {:error,  any}
+  @spec request_payment(options :: list | map | %PayNL.TransactionOptions{}) :: {:ok, %PayNL.TransActionRequest{}} | {:error,  any}
   def request_payment(options) when is_list(options), do: request_payment(Enum.into(options, %{}))
   def request_payment(%PayNL.TransactionOptions{} = options) do
     options
